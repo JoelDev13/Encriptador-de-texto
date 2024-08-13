@@ -4,8 +4,20 @@ const muneco = document.querySelector(".muñeco");
 const aviso = document.querySelector(".texto-aviso");
 const infoTexto = document.querySelector(".texto");
 
+function tieneMayusculasOAcentos(texto) {
+    const regex = /[^a-z0-9\s]/;
+    return regex.test(texto);
+}
+
 function encriptar() {
-    let texto = inputTexto.value.toLowerCase();
+    let texto = inputTexto.value;
+
+    if (tieneMayusculasOAcentos(texto)) {
+        alert("El texto contiene mayúsculas, acentos o caracteres especiales. No se puede encriptar.");
+        return;
+    }
+
+    texto = texto.toLowerCase();
 
     const reglas = [
         ["e", "enter"],
@@ -20,6 +32,7 @@ function encriptar() {
     }
 
     outputTexto.textContent = texto;
+    outputTexto.style.color = "#FFFFFF";
     muneco.style.display = "none";
     aviso.style.display = "none";
     infoTexto.style.display = "none";
@@ -27,7 +40,14 @@ function encriptar() {
 }
 
 function desencriptar() {
-    let texto = inputTexto.value.toLowerCase();
+    let texto = inputTexto.value;
+
+    if (tieneMayusculasOAcentos(texto)) {
+        alert("El texto contiene mayúsculas, acentos o caracteres especiales. No se puede desencriptar.");
+        return;
+    }
+
+    texto = texto.toLowerCase();
 
     const reglas = [
         ["enter", "e"],
@@ -40,7 +60,9 @@ function desencriptar() {
     for (let i = 0; i < reglas.length; i++) {
         texto = texto.replaceAll(reglas[i][0], reglas[i][1]);
     }
+    
     outputTexto.textContent = texto;
+    outputTexto.style.color = "#FFFFFF"; 
     muneco.style.display = "none";
     aviso.style.display = "none";
     infoTexto.style.display = "none";
@@ -59,5 +81,3 @@ function limpiar() {
 document.querySelector("#encriptar").addEventListener("click", encriptar);
 document.querySelector("#desencriptar").addEventListener("click", desencriptar);
 document.querySelector("#limpiar").addEventListener("click", limpiar);
-
-
