@@ -1,9 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     height: 100%;
@@ -79,15 +78,15 @@ body {
     border-radius: 8px;
     border: 2px solid #3A3A3A;
     color: #171717; 
-    background-color:  #6ACFC7; 
+    background-color: #6ACFC7; 
     cursor: pointer;
     transition: transform 0.2s;
 }
 
 .boton-transparente {
     background-color: transparent;
-    color:  #6ACFC7; 
-    border: 2px solid  #6ACFC7; 
+    color: #6ACFC7; 
+    border: 2px solid #6ACFC7; 
 }
 
 .boton:hover {
@@ -147,15 +146,19 @@ body {
 
 .boton-salida {
     margin-top: 20px;
-    background-color: #6ACFC7; 
-    border: 2px solid #3A3A3A; 
-    color: #FFFFFF; 
+    background-color: #6ACFC7;
+    border-radius: 10px;
+    border: 2px solid #3A3A3A;
+    color: #FFFFFF;
     font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .boton-salida:hover {
-    background-color:  #5ABFB7;
-    color: #FFFFFF; 
+    background-color: #5ABFB7;
+    color: #FFFFFF;
 }
 
 .boton-salida:active {
@@ -179,7 +182,6 @@ footer a {
     text-decoration: none;
     font-size: 14px;
 }
-
 
 @media screen and (max-width: 900px) {
     .contenedor {
@@ -219,5 +221,6 @@ footer a {
         width: 100%;
     }
 }
+
 
 
